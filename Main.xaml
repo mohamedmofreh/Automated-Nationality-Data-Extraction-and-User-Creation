@@ -191,13 +191,13 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:GetIMAPMailMessages>
                       <FlowStep.Next>
-                        <FlowDecision x:Name="__ReferenceID1" Condition="[GetEmails .Where(Function(m)m.Subject.Contains(config(&quot;MailSubject&quot;).ToString)).Any]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                        <FlowDecision x:Name="__ReferenceID1" Condition="[GetEmails .Where(Function(m)m.Subject.Contains(config(&quot;MailSubject&quot;).ToString)).Any]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <av:Point x:Key="ShapeLocation">300.8,256.4</av:Point>
-                              <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
-                              <av:PointCollection x:Key="TrueConnector">300.8,300 110,300 110,347.6</av:PointCollection>
+                              <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
+                              <av:PointCollection x:Key="TrueConnector">300.8,300 130,300 130,357.6</av:PointCollection>
                               <av:PointCollection x:Key="FalseConnector">379.20000000000005,300 460,300 460,386.4</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -205,9 +205,9 @@
                             <FlowStep x:Name="__ReferenceID5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">10,347.6</av:Point>
+                                  <av:Point x:Key="ShapeLocation">30,357.6</av:Point>
                                   <av:Size x:Key="ShapeSize">200,24.8</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">110,372.40000000000003 110,407.6</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">130,382.40000000000003 130,417.6</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Starting Process&quot;]" />
@@ -215,11 +215,12 @@
                                 <FlowStep x:Name="__ReferenceID2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">10,407.6</av:Point>
+                                      <av:Point x:Key="ShapeLocation">30,417.6</av:Point>
                                       <av:Size x:Key="ShapeSize">200,24.8</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">30,430 5.684341886080802E-14,430 5.684341886080802E-14,180 240,180</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Process" sap:VirtualizedContainerService.HintSize="449.6,1454.4" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                  <Sequence DisplayName="Process" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="ui:Browser" Name="Browser" />
                                       <Variable x:TypeArguments="sd:DataTable" Name="dtUsersSummary" />
@@ -231,12 +232,8 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init" sap:VirtualizedContainerService.HintSize="387.2,153.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Process_Steps\InitApps.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <OutArgument x:TypeArguments="ui:Browser" x:Key="out_Browser">
-                                          <VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="Browser" />
-                                        </OutArgument>
-                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="config" />
-                                        </InArgument>
+                                        <OutArgument x:TypeArguments="ui:Browser" x:Key="out_Browser">[Browser]</OutArgument>
+                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[config]</InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="2) Reading Test Email " sap:VirtualizedContainerService.HintSize="387.2,153.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Process_Steps\Step_2.xaml">
@@ -254,9 +251,7 @@
                                     </ui:InvokeWorkflowFile>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="4) Starting VPN Connection " sap:VirtualizedContainerService.HintSize="387.2,153.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="Process_Steps\Step_4.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="config" />
-                                        </InArgument>
+                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[config]</InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="5) Reading Downloaded Excel File" sap:VirtualizedContainerService.HintSize="387.2,153.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Process_Steps\Step_5.xaml">
@@ -295,17 +290,20 @@
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>
+                                  <FlowStep.Next>
+                                    <x:Reference>__ReferenceID0</x:Reference>
+                                  </FlowStep.Next>
                                 </FlowStep>
                               </FlowStep.Next>
                             </FlowStep>
                           </FlowDecision.True>
                           <FlowDecision.False>
-                            <FlowDecision x:Name="__ReferenceID6" Condition="[counter = Convert.ToInt32(config(&quot;TriggerTime&quot;))]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                            <FlowDecision x:Name="__ReferenceID6" Condition="[counter = Convert.ToInt32(config(&quot;TriggerTime&quot;))]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <av:Point x:Key="ShapeLocation">420.8,386.4</av:Point>
-                                  <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                  <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                   <av:PointCollection x:Key="FalseConnector">499.20000000000005,430 620,430 620,517.6</av:PointCollection>
                                   <av:PointCollection x:Key="TrueConnector">420.8,430 290,430 290,517.6</av:PointCollection>
                                 </scg:Dictionary>
