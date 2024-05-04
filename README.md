@@ -1,10 +1,9 @@
-<div>
-  <h1>Project Title:</h1>
-  <p>Automated Nationality Data Extraction and User Creation</p>
-</div> 
 
-<div>
-  <h1>Summary:</h1>
+  <h1>✏ Project Title:</h1>
+  <p>Automated Nationality Data Extraction and User Creation</p>
+  <hr>
+
+  <h1>📝 Summary:</h1>
   <dt>The project entails building an RPA (Robotic Process Automation) solution using UiPath Studio to automate several tasks:</dt>
     <dd><h5>1️⃣ Email Handling: <br><br>&emsp;✅The robot listens for a specific email titled 'any email title' reads its attached Excel file, and downloads it to an output folder.</h5></dd>
     <dd><h5>2️⃣ VPN Integration: <br><br>&emsp;✅Before processing data, the robot creates an account on hide.me VPN and enables it to ensure secure browsing.</h5></dd>
@@ -18,17 +17,15 @@
     <dd><h5>🔟 Email Notification:<br><br>&emsp;✅Sends `result.xlsx` and `summary.csv` files via email to specified recipients.</h5></dd>
     <dd><h5>1️⃣1️⃣ Process Automation: <br><br>&emsp;✅Initiates processing upon receiving the trigger email and stops if no new email is received within 5 minutes.</h5></dd>
     <dd><h5>1️⃣2️⃣ Development: <br><br>&emsp;✅Developed using UiPath Studio, with no dependency on Orchestrator.</h5></dd>
-</div>
+  <hr>
 
-<div>
-  <h1>Technologies Used:</h1>
+  <h1>💻 Technologies Used:</h1>
   <ul>
     <li>UiPath</li>
   </ul>
-</div>
+  <hr>
 
-<div>
-  <h1>Workflow:</h1>
+  <h1>♻ Workflow:</h1>
   <ol>
     <dt><h4>1️⃣ Initialization</h4></dt>
       <dd>&emsp; ✅ Load configuration variables from `config.csv`</dd>
@@ -57,4 +54,3 @@
       <dd>&emsp; ✅  Continue checking the inbox for new emails.</dd>
       <dd>&emsp; ✅  If no new email is received within 5 minutes, stop the process.</dd>
    </ol>
-</div>
